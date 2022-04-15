@@ -86,7 +86,7 @@ h1{
   margin: 0;
   list-style-type: none;
 }
-#btExcluir{
+.btExcluir{
   background-color:#ecd444;
   color: #562296;
   border-radius:5px;

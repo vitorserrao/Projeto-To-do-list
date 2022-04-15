@@ -1,25 +1,24 @@
 import { criaId } from './cria_id.js';
-let btInserirItem = document.querySelector('#btInserirItem');
-let btExcluir = document.querySelector('#btExcluir');
-let itemDigitado = document.querySelector('#btCampoItem');
-let listaComItem = document.querySelector('#listaComItem').innerHTML;
+export function addItem() {
+  let btInserirItem = document.querySelector('#btInserirItem');
+  let itemDigitado = document.querySelector('#btCampoItem');
+  let listaComItem = document.querySelector('#listaComItem');
+  let arrayItem = [];
 
-const btAdd = '<input type="button" value="X" id="btExcluir">';
-const check = '<input type="checkbox" id="checkbox">';
-let arrayItem = [];
+  btInserirItem.onclick = () => {
+    let item = {
+      id: criaId(),
+      nome: itemDigitado.value,
+    };
 
-let criaItem = () => {
-  let item = {
-    id: criaId(),
-    nome: itemDigitado.value,
+    if (itemDigitado.value) {
+      const btEx = `<input type="button" value="Eliminar" class="btExcluir" id="item-${item.id}">`;
+      const check = '<input type="checkbox" id="checkbox">';
+      const li = document.createElement('li');
+      li.innerHTML = `${check} <span >${itemDigitado.value}</span> ${btEx}`;
+      listaComItem.appendChild(li);
+      arrayItem.push(item);
+      itemDigitado.value = '';
+    }
   };
-
-  if (itemDigitado.value != '') {
-    arrayItem.push(item);
-    listaComItem = listaComItem + '<li id="item">' + check + itemDigitado.value + btAdd + '</li>';
-    document.querySelector('#listaComItem').innerHTML = listaComItem;
-    console.log(arrayItem);
-  }
-};
-
-btInserirItem.addEventListener('click', criaItem);
+}
