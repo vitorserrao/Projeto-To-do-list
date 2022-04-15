@@ -1,0 +1,115 @@
+                  /*Estilo base*/
+body{
+ background-color: #562296;
+}
+@font-face {
+  font-family: poppins;
+  src: url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+}
+
+h1{
+  font-size: 20px;
+  font-family: poppins;
+  text-align: center;
+  color: white;
+}
+                     /*Estilo das divs*/
+.topo{
+  background-color: #562296;
+  display: flex;
+  justify-content: center;
+}
+.boxTopo{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#boxLista{
+  display: flex;
+  flex-direction: column;
+  width:450px;
+  height:500px;
+  background-color: #762FCF;
+  border-radius: 20px 0px 0px 20px;
+  -webkit-box-shadow: 1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+  -moz-box-shadow:    1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+  box-shadow:         1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+}
+.boxAdd{
+  display: flex;
+  justify-content: center;
+  width:250px;
+  height:500px;
+  background-color: #00F2F2;
+  border-radius: 0px 20px 20px 0px;
+  -webkit-box-shadow: 1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+  -moz-box-shadow:    1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+  box-shadow:         1px 16px 28px 0px rgba(50, 50, 50, 0.67);
+}
+.botoes{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 10px 30px 10px;
+}
+
+
+#btCampoItem{
+  background-color:white;
+  font-family: poppins;
+  border-radius:5px;
+  -webkit-box-shadow: 1px 5px 20px 0px rgba(50, 50, 50, 0.67);
+  -moz-box-shadow:    1px 6px 20px 0px rgba(50, 50, 50, 0.67);
+  box-shadow:         1px 6px 20px 0px rgba(50, 50, 50, 0.67);
+}
+
+#btInserirItem{
+  background-color:#ecd444;
+  color: #562296;
+  border-radius:5px;
+  font-family: poppins;
+  -webkit-box-shadow: 1px 5px 20px 0px rgba(50, 50, 50, 0.67);
+  -moz-box-shadow:    1px 6px 20px 0px rgba(50, 50, 50, 0.67);
+  box-shadow:         1px 6px 20px 0px rgba(50, 50, 50, 0.67);
+  outline: none;
+  cursor: pointer;
+}
+#areaLista{
+  justify-content: center;
+  margin:auto;
+  width: 250px;
+  height: 350px;
+  
+}
+#listaComItem {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+#btExcluir{
+  background-color:#ecd444;
+  color: #562296;
+  border-radius:5px;
+  font-family: poppins;
+  outline: none;
+  cursor: pointer;
+}
+
+#listaComItem li{
+  display: flex;
+  background-color: #562296;
+  border-radius: 10px;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 5px;
+  color: white;
+  font-family: poppins;
+  margin-top: 10px;
+}
+
+
+#checkbox{
+  color: #ecd444;
+  background-color: #ecd444;
+  border-style: solid;
+}
