@@ -107,9 +107,8 @@ h1{
   margin-top: 10px;
 }
 
-
-#checkbox{
-  color: #ecd444;
-  background-color: #ecd444;
-  border-style: solid;
+input:checked + #item{
+  color: #00F2F2;
+  text-decoration:line-through;
 }
+
