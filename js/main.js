@@ -5,6 +5,7 @@ let itemDigitado = document.querySelector('#btCampoItem');
 let listaComItem = document.querySelector('#listaComItem');
 let popup = document.querySelector('#popup');
 let valorDigitado = document.querySelector('.valorDigitado'); //preço do produto
+let preco = document.querySelector('#preco');
 
 const localLista = JSON.parse(localStorage.getItem('listaItem'));
 let listaItem = localStorage.getItem('listaItem') !== null ? localLista : [];
@@ -16,8 +17,8 @@ const setLocalList = () => {
 // cria os elementos e add na tela
 const criaElemento = (produto, id, estado) => {
   const li = document.createElement('li');
-  let btEx = document.createElement('button');
-  let check = `<input type="checkbox" data-id=${id} ${estado}>`;
+  const btEx = document.createElement('button');
+  const check = `<input type="checkbox" data-id=${id} ${estado}>`;
   btEx.setAttribute('class', 'btExcluir');
   btEx.setAttribute('id', `${id}`);
   btEx.innerHTML = 'X';
@@ -35,6 +36,7 @@ let excluiItem = () => {
         listaComItem.innerHTML = '';
         listaItem.splice(i, 1);
         setLocalList();
+        calcValor();
         lerlistaItem();
       }
     });
@@ -59,11 +61,11 @@ const checkbox = () => {
         setLocalList();
         popup.onclick = () => {
           if (valorDigitado.value) {
-            listaItem[i].valor = valorDigitado.value;
+            listaItem[i].valor = valorDigitado.valueAsNumber;
+            calcValor();
             setLocalList();
             valorDigitado.value = '';
             popup.style.display = 'none';
-            console.log(listaItem[i].valor.type);
           }
         };
       }
@@ -72,10 +74,14 @@ const checkbox = () => {
 };
 
 const calcValor = () => {
-  let calc = listaItem.reduce((total, obj) => {
-    return total + Number(obj.valor);
-  }, 0);
+  const listaPreco = listaItem.map((itens) => itens.valor);
+
+  listaItem[0].valorTotal = listaPreco.reduce((soma, itens) => soma + itens, 0);
+  setLocalList();
+  preco.innerHTML = `<div id="preco"><H1>R$ ${listaItem[0].valorTotal}</H1></div>`;
+  console.log(listaItem[0].valorTotal);
 };
+
 checkbox();
 const clickBtInserir = (evento) => {};
 btInserirItem.onclick = () => {
@@ -86,11 +92,11 @@ btInserirItem.onclick = () => {
       produto: itemDigitado.value,
       estado: '',
       valor: '',
+      valorTotal: '',
     };
     listaItem.push(item);
     setLocalList();
     lerlistaItem();
-    console.log(listaItem);
     itemDigitado.value = '';
 
     //poup();
@@ -101,3 +107,4 @@ btInserirItem.onclick = () => {
 };
 excluiItem();
 lerlistaItem();
+calcValor();
