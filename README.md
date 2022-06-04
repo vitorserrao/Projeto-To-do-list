@@ -15,9 +15,8 @@ Um navegador atualizado.
 - [CSS] - Usado para estilizar a aplicação.
 - [JAVASCRIPT] - Usado para adicionar inteligência na aplicação.
 
-#### 📌 Versão
+#### 📌 Versão : 1.2
 
-1.2
 ![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/telas.png)
 
 
