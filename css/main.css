@@ -43,7 +43,8 @@ h3{
   max-height: auto;
   position: relative;
   width:450px;
-  min-height: 300px;
+  min-height: 300px
+  ;
   background-color: #762FCF;
   border-radius: 20px 0px 20px 20px;
   -webkit-box-shadow: 1px 16px 28px 0px rgba(50, 50, 50, 0.67);
