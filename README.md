@@ -4,7 +4,6 @@ Compre fácil é uma ferramenta que facilita e organiza as compras do cliente de
 Cada linha da lista contém: checkbox para o usuário marcar aquele produto que já foi comprado; o texto que o usuário digitou ao cadastrar o produto; botão para excluir o produto da lista, caso desejado. Quando o usuário marcar um item da compra, deve-se abrir um pop-up para que o usuário digite o valor da compra, após isso, deve-se somar ao valor total das compras.
 A lista é salva no "localStorage" do navegador (incluindo os produtos que já foram realizados), e é carregada sempre que a página for reaberta.
 
-![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/tela1.JPG)
 
 ## 📋 Pré-requisitos
 
@@ -19,7 +18,10 @@ Um navegador atualizado.
 #### 📌 Versão
 
 1.2
+![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/tela1.JPG)
+![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/tela2.JPG)
+![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/tela3.JPG)
 
-## ✒️ Autor
+##### ✒️ Autor
 
 - **Vitor Serrão** - (https://github.com/vitorwss)
