@@ -45,7 +45,7 @@ let excluiItem = () => {
 // ler array com item a serem criados
 const lerlistaItem = () => {
   listaItem.forEach((obj) => {
-    return criaElemento(obj.produto, obj.id, obj.estado);
+    return criaElemento(obj.produto, obj.id, obj.estado, obj.valor);
   });
 };
 
@@ -75,12 +75,12 @@ const checkbox = () => {
 
 const calcValor = () => {
   const listaPreco = listaItem.map((itens) => itens.valor);
+  console.log(listaPreco);
   let valorTotal = listaPreco.reduce((soma, itens) => soma + itens, 0);
   setLocalList();
   preco.innerHTML = `<div id="preco"><H1>R$ ${valorTotal}</H1></div>`;
 };
 
-checkbox();
 const clickBtInserir = (evento) => {};
 btInserirItem.onclick = () => {
   if (itemDigitado.value) {
@@ -89,7 +89,7 @@ btInserirItem.onclick = () => {
       id: criaId(),
       produto: itemDigitado.value,
       estado: '',
-      valor: '',
+      valor: 0,
     };
     listaItem.push(item);
     setLocalList();
@@ -97,6 +97,8 @@ btInserirItem.onclick = () => {
     itemDigitado.value = '';
   }
 };
+
+checkbox();
 excluiItem();
 lerlistaItem();
 calcValor();
