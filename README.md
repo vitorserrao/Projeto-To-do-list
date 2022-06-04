@@ -18,7 +18,7 @@ Um navegador atualizado.
 #### 📌 Versão
 
 1.2
-![alt text]([https://github.com/vitorwss/-Projeto-To-do-list/blob/main/tela1.JPG])
+![alt text](https://github.com/vitorwss/-Projeto-To-do-list/blob/main/telas.png)
 
 
 ##### ✒️ Autor
