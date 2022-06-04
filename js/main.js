@@ -75,11 +75,9 @@ const checkbox = () => {
 
 const calcValor = () => {
   const listaPreco = listaItem.map((itens) => itens.valor);
-
-  listaItem[0].valorTotal = listaPreco.reduce((soma, itens) => soma + itens, 0);
+  let valorTotal = listaPreco.reduce((soma, itens) => soma + itens, 0);
   setLocalList();
-  preco.innerHTML = `<div id="preco"><H1>R$ ${listaItem[0].valorTotal}</H1></div>`;
-  console.log(listaItem[0].valorTotal);
+  preco.innerHTML = `<div id="preco"><H1>R$ ${valorTotal}</H1></div>`;
 };
 
 checkbox();
@@ -92,17 +90,11 @@ btInserirItem.onclick = () => {
       produto: itemDigitado.value,
       estado: '',
       valor: '',
-      valorTotal: '',
     };
     listaItem.push(item);
     setLocalList();
     lerlistaItem();
     itemDigitado.value = '';
-
-    //poup();
-    // btEx.onclick = () => {
-    // listaComItem.removeChild(li);
-    //};
   }
 };
 excluiItem();
